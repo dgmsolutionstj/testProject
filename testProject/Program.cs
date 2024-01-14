@@ -1,1 +1,0 @@
-﻿int amount = 0;
