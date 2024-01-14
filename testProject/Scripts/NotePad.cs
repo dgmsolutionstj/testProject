@@ -5,57 +5,61 @@ class Program
 {
     static void Main()
     {
+        // Uncomment any function and then run it.
+
         //PrintToConsole();
         //VariablesAndDataTypes();
         //MathOperators();
         //ComparisonOperators();
         //LogicalOperators();
-        ConditionalStatements();
+        //ConditionalStatements();
+        Loops();
     }
 
     static void PrintToConsole()
     {
+        // Prints a simple message to the console.
         Console.WriteLine("Hello World!!");
     }
 
     // Variables and Data Types
     static void VariablesAndDataTypes()
     {
-        //Working with numbers
-        int age = 30;
+        // Working with numbers
+        int age = 30;  // Declares and initializes an integer variable.
         Console.WriteLine(age);
 
-        int quantity; // you can also asign integers without the value. This variable is latter asign a value.
+        int quantity;  // Declares an integer variable without initializing it.
 
-        float temperature = 20.4f;
+        float temperature = 20.4f;  // Declares and initializes a float variable.
         Console.WriteLine(temperature);
 
-        double interest = 5.53;
+        double interest = 5.53;  // Declares and initializes a double variable.
         Console.WriteLine("Interest: " + interest);
 
-        decimal stockPrice = 5.34765344M; // Remember to add the "M" in the end of the number when using decimal.
+        decimal stockPrice = 5.34765344M;  // Declares and initializes a decimal variable.
         Console.WriteLine("Stock Price: " + stockPrice);
 
         // Working with Strings
-        char letter = 'A'; // This is use for a single character. char always goes with single quotes ''.
+        char letter = 'A';  // Declares and initializes a character variable.
         Console.WriteLine(letter);
 
-        string name = "Diego";
+        string name = "Diego";  // Declares and initializes a string variable.
         string activity = "Walk";
-        Console.WriteLine($"My name is {name}, and I like to {activity}"); // formated string with place holder {}.
+        Console.WriteLine($"My name is {name}, and I like to {activity}");  // Formatted string with placeholders.
 
-        string product; // you can also asign strings without the value. This variable is latter asign a value.
+        string product;  // Declares a string variable without initializing it.
 
-        // Working with booloeans
-        bool isStudent = true;
+        // Working with booleans
+        bool isStudent = true;  // Declares and initializes a boolean variable.
         Console.WriteLine(isStudent);
 
-        // This is how to asign variables in a latter time.
+        // Variable assignment at a later time
         quantity = 5;
         product = "bananas";
         Console.WriteLine($"We have {quantity} of the {product}");
 
-        const double Pi = 3.14;
+        const double Pi = 3.14;  // Declares and initializes a constant variable.
         Console.WriteLine(Pi);
     }
 
@@ -64,37 +68,36 @@ class Program
         int num1 = 34;
         int num2 = 15;
 
-        int adition = num1 + num2;
-        Console.WriteLine("This is a adition: " + adition); 
+        int addition = num1 + num2;  // Adds two integers.
+        Console.WriteLine("This is an addition: " + addition);
 
-        int multiply = num1 * num2;
-        Console.WriteLine("This is a multiply: " + multiply);
+        int multiply = num1 * num2;  // Multiplies two integers.
+        Console.WriteLine("This is a multiplication: " + multiply);
 
-        int divide = num1 / num2;
+        int divide = num1 / num2;  // Divides two integers.
         Console.WriteLine("I'm dividing num1 by num2: " + divide);
 
-        int substract = num1 - num2;
-        Console.WriteLine("I'm substraction num1 by num2: " + substract);
+        int subtract = num1 - num2;  // Subtracts two integers.
+        Console.WriteLine("I'm subtracting num1 by num2: " + subtract);
 
-        // This is how you divide num1 by num2 but intead of getting the division, you are getting the reminder of the total
+        // Calculates the remainder when dividing num1 by num2.
         int modulus = num1 % num2;
-        Console.WriteLine("Here I'm getting the remainder: " + modulus);  
+        Console.WriteLine("Here I'm getting the remainder: " + modulus);
 
-        // The way to handle error and to prevent that the program crash, add this to the program. How to Handle Errors
-
+        // Handling division by zero using try-catch block
         try
         {
             int quotient = num1 / num2;
             Console.WriteLine(quotient);
-        } catch (DivideByZeroException ex)
+        }
+        catch (DivideByZeroException ex)
         {
-            Console.WriteLine("An erreo ocurred: " + ex.Message);
+            Console.WriteLine("An error occurred: " + ex.Message);
         }
 
         int num3 = 105;
-        double num3AsDouble = (Double) num3;
+        double num3AsDouble = (Double)num3;  // Converts an integer to a double.
         Console.WriteLine(num3AsDouble);
-
     }
 
     static void ComparisonOperators()
@@ -102,24 +105,23 @@ class Program
         int a = 10;
         int b = 15;
 
-        bool isEqual = (a == b);
+        bool isEqual = (a == b);  // Checks if two values are equal.
         Console.WriteLine(isEqual);
 
-        bool notEqual = (a != b);
+        bool notEqual = (a != b);  // Checks if two values are not equal.
         Console.WriteLine(notEqual);
 
-        bool isGreater = (a > b);
+        bool isGreater = (a > b);  // Checks if a is greater than b.
         Console.WriteLine(isGreater);
 
-        bool isLess = (a < b);
+        bool isLess = (a < b);  // Checks if a is less than b.
         Console.WriteLine(isLess);
 
-        bool isLessOrEqual = (a <= b);
+        bool isLessOrEqual = (a <= b);  // Checks if a is less than or equal to b.
         Console.WriteLine(isLessOrEqual);
 
-        bool isGreaterOrEqual = (a >= b);   
+        bool isGreaterOrEqual = (a >= b);  // Checks if a is greater than or equal to b.
         Console.WriteLine(isGreaterOrEqual);
-
     }
 
     static void LogicalOperators()
@@ -127,16 +129,16 @@ class Program
         bool x = true;
         bool y = false;
 
-        bool andResult = (x && y);
+        bool andResult = (x && y);  // Logical AND - true if both x and y are true.
         Console.WriteLine(andResult);
 
-        bool orResult = (x || y);
+        bool orResult = (x || y);  // Logical OR - true if either x or y is true.
         Console.WriteLine(orResult);
 
-        bool notResult1 = (x && !y);
+        bool notResult1 = (x && !y);  // Logical NOT - negates the value of y.
         Console.WriteLine(notResult1);
 
-        bool notResult2 = !x;
+        bool notResult2 = !x;  // Logical NOT - negates the value of x.
         Console.WriteLine(notResult2);
     }
 
@@ -145,10 +147,11 @@ class Program
         // Working with the if, else if, and else statement.
         int age = 24;
 
-        if(age >= 18 && age <= 45)
+        if (age >= 18 && age <= 45)
         {
             Console.WriteLine("You can drive in our city");
-        } else if (age >= 46)
+        }
+        else if (age >= 46)
         {
             Console.WriteLine("You are too old to drive in our city.");
         }
@@ -158,7 +161,64 @@ class Program
         }
 
         // Working with the switch statement.
+        int day = 5;
 
+        string dayName;
 
+        switch (day)
+        {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            default:
+                dayName = "Weekend";
+                break;
+        }
+
+        Console.WriteLine("Today is " + dayName);
+    }
+
+    // Working with Loops in C#
+    static void Loops()
+    {
+        for (int i = 0; i <= 5; i++)
+        {
+            Console.WriteLine("Number: " + i);  // Prints numbers from 0 to 5.
+        }
+
+        int count = 0;
+
+        while (count < 5)
+        {
+            Console.WriteLine("While count " + count);  // Prints numbers using a while loop.
+            count++;
+        }
+
+        count = 0;
+
+        do
+        {
+            Console.WriteLine("Do-while count: " + count);  // Prints numbers using a do-while loop.
+            count++;
+        } while (count < 10);
+
+        int[] numbers = { 1, 2, 3, 4, 5, 6, };
+
+        foreach (int number in numbers)
+        {
+            Console.WriteLine("Number in array: " + number);  // Prints numbers from an array using a foreach loop.
+        }
     }
 }
